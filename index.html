@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>MOS Evaluation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+</head>
+
+<body onload="return randomQuestions();">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <h1 class="display-4">MOS Evaluation/Đánh giá MOS</h1>
+    <p class="lead">Evaluate the naturalness and inteliigence of speech</p>
+    <p class="lead">Đánh giá độ tự nhiên và thông minh của câu nói</p>
+    <hr class="my-4">
+    <p>
+        Thank you for paticipating in this survey!
+    </p>
+    <p>
+        Cảm ơn bạn vì đã tham gia bài khảo sát này!
+    </p>
+    <p>
+        In this experiment, we use a computer to synthesize human speech.
+        The following audio files contain real recordings and synthesized voices, and each sentence is accompanied by a transcript.
+        The subjects were asked to listen with headphones and gave the following scores according to the quality of each sound file:
+        ---
+    </p>
+    <p>
+        Trong thí nghiệm này, chúng tôi sử dụng máy tính để tổng hợp giọng nói của con người.
+        Các tệp âm thanh sau đây chứa các bản ghi âm thât và giọng nói tổng hợp, và mỗi câu được kèm theo một bản ghi.
+        Các đối tượng được yêu cầu nghe bằng tai nghe và cho điểm theo thang sau đây dựa trên cảm nhận về của từng tệp âm thanh:
+        <ul>
+            <li>１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</li>
+            <li>２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</li>
+            <li>3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</li>
+            <li>４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</li>
+            <li>５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</li>
+        </ul>
+    </p>
+
+        </div>
+    </div>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbyggDCaDEVXPh8Kk53zAfZr-moQB6KHnszpaQeUhQhkHYHCJ3l-DGBuVMph4VJnOUzUzQ/exec" method="GET" onsubmit="return preventRepeatedSubmission();">
+            <div class="form-group">
+                <label for="name">Your name (tên của bạn): </label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">required* (xin điền tên)</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">Địa chỉ email: </label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
+                <small class="form-text text-muted"></small>
+            </div>
+            
+     
+        <div class="card form-group">
+            <div class="card-header">問題 1</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test1.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_1" value="5" required>
+                    <label class="form-check-label" for="q1_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_2" value="4" required>
+                    <label class="form-check-label" for="q1_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_3" value="3" required>
+                    <label class="form-check-label" for="q1_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_4" value="2" required>
+                    <label class="form-check-label" for="q1_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1_5" value="1" required>
+                    <label class="form-check-label" for="q1_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card form-group">
+            <div class="card-header">問題 2</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test2.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_1" value="5" required>
+                    <label class="form-check-label" for="q2_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_2" value="4" required>
+                    <label class="form-check-label" for="q2_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_3" value="3" required>
+                    <label class="form-check-label" for="q2_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_4" value="2" required>
+                    <label class="form-check-label" for="q2_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q2" id="q2_5" value="1" required>
+                    <label class="form-check-label" for="q2_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card form-group">
+            <div class="card-header">333</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test1.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_1" value="5" required>
+                    <label class="form-check-label" for="q3_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_2" value="4" required>
+                    <label class="form-check-label" for="q3_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_3" value="3" required>
+                    <label class="form-check-label" for="q3_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_4" value="2" required>
+                    <label class="form-check-label" for="q3_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q3" id="q3_5" value="1" required>
+                    <label class="form-check-label" for="q3_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card form-group">
+            <div class="card-header">444</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test2.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_1" value="5" required>
+                    <label class="form-check-label" for="q4_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_2" value="4" required>
+                    <label class="form-check-label" for="q4_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_3" value="3" required>
+                    <label class="form-check-label" for="q4_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_4" value="2" required>
+                    <label class="form-check-label" for="q4_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q4" id="q4_5" value="1" required>
+                    <label class="form-check-label" for="q4_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card form-group">
+            <div class="card-header">555</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test1.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_1" value="5" required>
+                    <label class="form-check-label" for="q5_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_2" value="4" required>
+                    <label class="form-check-label" for="q5_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_3" value="3" required>
+                    <label class="form-check-label" for="q5_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_4" value="2" required>
+                    <label class="form-check-label" for="q5_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q5" id="q5_5" value="1" required>
+                    <label class="form-check-label" for="q5_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+     
+        <div class="card form-group">
+            <div class="card-header">666</div>
+            <div class="card-body">
+                <p>
+                    <audio controls src="wavs/test2.wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_1" value="5" required>
+                    <label class="form-check-label" for="q6_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_2" value="4" required>
+                    <label class="form-check-label" for="q6_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_3" value="3" required>
+                    <label class="form-check-label" for="q6_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_4" value="2" required>
+                    <label class="form-check-label" for="q6_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q6" id="q6_5" value="1" required>
+                    <label class="form-check-label" for="q6_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
+                </div>
+            </div>
+        </div>
+    
+
+            <input type="text" name="formid" value="1" hidden>
+            <input type="text" name="thank" value="Cảm ơn bạn một lần nữa vì đã tham gia thử nghiệm này! (Thank you again for participating in this experiment!)" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit results" id="submitBtn">
+            <p class="text-muted">
+                
+            </p>
+        </form>
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy; 台大語音實驗室</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+        function randomQuestions() {
+            questions_array = Array.from(document.getElementById("theForm").querySelectorAll(".form-group")).slice(2);
+            questions_array.forEach(function test(item){item.remove()});
+            questions_array = questions_array.sort((a, b) => 0.5 - Math.random());
+            questions_array.forEach(function test(item){document.getElementById("theForm").insertBefore(item, document.getElementById("submitBtn"))});
+            return True;
+        }
+    </script>
+</body>
+
+</html>

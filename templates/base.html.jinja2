@@ -9,7 +9,7 @@
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="return randomQuestions();">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             {% block heading %}{% endblock %}
@@ -19,21 +19,21 @@
     <div class="container" id="form_container">
         <form id="theForm" action="{{ form_url }}" method="GET" onsubmit="return preventRepeatedSubmission();">
             <div class="form-group">
-                <label for="name">姓名：</label>
+                <label for="name">Your name (tên của bạn): </label>
                 <input class="form-control" type="text" inputmode="text" name="name" required>
-                <small class="form-text text-muted">必填*</small>
+                <small class="form-text text-muted">required* (xin điền tên)</small>
             </div>
             <div class="form-group">
-                <label for="mail">電子郵件：</label>
+                <label for="mail">Địa chỉ email: </label>
                 <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
-                <small class="form-text text-muted">如果中獎，我們將以電子郵件通知您</small>
+                <small class="form-text text-muted"></small>
             </div>
             {% block form_questions %}{% endblock %}
             <input type="text" name="formid" value="{{ form_id }}" hidden>
-            <input type="text" name="thank" value="再次謝謝您參與本次實驗！" hidden>
-            <input class="btn btn-info btn-lg" type="submit" value="提交結果" id="submitBtn">
+            <input type="text" name="thank" value="Cảm ơn bạn một lần nữa vì đã tham gia thử nghiệm này! (Thank you again for participating in this experiment!)" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="Submit results" id="submitBtn">
             <p class="text-muted">
-                <small>如果提交結果時發現繳不出去，請回頭檢查是否有填入姓名、是否每一題都有作答到，謝謝。</small>
+                
             </p>
         </form>
     </div>
@@ -48,6 +48,13 @@
             setTimeout("submitBtn.disabled=false;", 5000);
             return true;
         };
+        function randomQuestions() {
+            questions_array = Array.from(document.getElementById("theForm").querySelectorAll(".form-group")).slice(2);
+            questions_array.forEach(function test(item){item.remove()});
+            questions_array = questions_array.sort((a, b) => 0.5 - Math.random());
+            questions_array.forEach(function test(item){document.getElementById("theForm").insertBefore(item, document.getElementById("submitBtn"))});
+            return True;
+        }
     </script>
 </body>
 

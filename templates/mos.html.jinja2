@@ -1,26 +1,36 @@
 {% extends "base.html.jinja2" %}
 {% block heading %}
-    <h1 class="display-4">MOS 實驗</h1>
-    <p class="lead">合成語音品質評估</p>
+    <h1 class="display-4">MOS Evaluation/Đánh giá MOS</h1>
+    <p class="lead">Evaluate the naturalness and inteliigence of speech</p>
+    <p class="lead">Đánh giá độ tự nhiên và thông minh của câu nói</p>
     <hr class="my-4">
     <p>
-        感謝您參與本次實驗！
+        Thank you for paticipating in this survey!
     </p>
     <p>
-        在這個實驗中，我們使用電腦合成人類語音。
-        以下的音檔中，包含了真實的錄音以及合成的聲音，並且每句話都有附上文字稿。
-        請受試者使用耳機聆聽，並根據每個音檔的品質，給予以下幾種評分：
+        Cảm ơn bạn vì đã tham gia bài khảo sát này!
+    </p>
+    <p>
+        In this experiment, we use a computer to synthesize human speech.
+        The following audio files contain real recordings and synthesized voices, and each sentence is accompanied by a transcript.
+        The subjects were asked to listen with headphones and gave the following scores according to the quality of each sound file:
+        ---
+    </p>
+    <p>
+        Trong thí nghiệm này, chúng tôi sử dụng máy tính để tổng hợp giọng nói của con người.
+        Các tệp âm thanh sau đây chứa các bản ghi âm thât và giọng nói tổng hợp, và mỗi câu được kèm theo một bản ghi.
+        Các đối tượng được yêu cầu nghe bằng tai nghe và cho điểm theo thang sau đây dựa trên cảm nhận về của từng tệp âm thanh:
         <ul>
-            <li>１（非常不好）</li>
-            <li>２（不好）</li>
-            <li>３（普通）</li>
-            <li>４（好）</li>
-            <li>５（非常好）</li>
+            <li>１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</li>
+            <li>２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</li>
+            <li>3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</li>
+            <li>４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</li>
+            <li>５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</li>
         </ul>
     </p>
 {% endblock %}
 {% block form_questions %}
-    {% for question in questions %}
+    {% for question in questions %} 
         <div class="card form-group">
             <div class="card-header">{{ question.title }}</div>
             <div class="card-body">
@@ -31,23 +41,23 @@
                 </p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_1" value="5" required>
-                    <label class="form-check-label" for="{{ question.name }}_1">５（非常好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_1">５ Excellent (obvious, natural) - Xuất sắc (rõ ràng, là thu âm người thật)</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_2" value="4" required>
-                    <label class="form-check-label" for="{{ question.name }}_2">４（好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_2">４ Good (quite obvious, quite natural) - Tốt (khá rõ ràng, khá tự nhiên)</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_3" value="3" required>
-                    <label class="form-check-label" for="{{ question.name }}_3">３（普通）</label>
+                    <label class="form-check-label" for="{{ question.name }}_3">3 Fair (equally natural and unatural speech) - Bình thường (không tự nhiên và cũng không quá robot)</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_4" value="2" required>
-                    <label class="form-check-label" for="{{ question.name }}_4">２（不好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_4">２Not good (not obvious) - Không được tốt (có thể nghe được nhưng không rõ)</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="{{ question.name }}" id="{{ question.name }}_5" value="1" required>
-                    <label class="form-check-label" for="{{ question.name }}_5">１（非常不好）</label>
+                    <label class="form-check-label" for="{{ question.name }}_5">１Very bad (too noise, can not listen to anything) - Rất tệ (không thể  nghe được)</label>
                 </div>
             </div>
         </div>
